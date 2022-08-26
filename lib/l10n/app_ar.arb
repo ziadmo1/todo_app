@@ -1,0 +1,10 @@
+{
+  "app_title" : "قائمة المهام",
+  "setting" : "الإعدادات",
+  "dark" : "الوضع الليلي",
+  "description" : "الوصف",
+  "task_title": "عنوان المهمة",
+  "english": "إنجليزي",
+  "arabic": "عربي",
+  "language": "اللغة"
+}
