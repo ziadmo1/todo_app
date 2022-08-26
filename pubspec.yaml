@@ -44,12 +44,21 @@ dependencies:
   intl: ^0.17.0
   awesome_dialog: ^2.2.1
   restart_app: ^1.1.0+1
+  flutter_native_splash: ^2.2.8
+
+flutter_native_splash:
+  color: "#DFECDB"
+  image: assets/images/splash_screen.png
+  color_dark: "#060E1E"
+  image_dark: assets/images/splash_screen.png
+
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_localizations: # Add this line
     sdk: flutter
+
 
 
   # The "flutter_lints" package below contains a set of recommended lints to

@@ -40,7 +40,9 @@ class _TaskWidgetState extends State<TaskWidget> {
                     bottomRight: Radius.circular(10),
                     topRight: Radius.circular(10)),
                 onPressed: (context) {
-
+                  if (mounted) {
+                    deleteTask(widget.task);
+                  }
                 },
                 backgroundColor: Color(0xFFFE4A49),
                 foregroundColor: Colors.white,
@@ -140,16 +142,13 @@ class _TaskWidgetState extends State<TaskWidget> {
   }
 
   deleteTask(Tasks tasks,){
-    showLoading(context, 'Loading....',isCancelable: false,);
     MyDataBase.deleteTask(tasks).then((value) {
-      hideLoading(context);
+        showMessage(context, dialogType: DialogType.SUCCES, desc: 'Task Deleted Successfully',onPressed: (){
+        });
     }).catchError((error){
-      hideLoading(context);
       showMessage(context, dialogType: DialogType.ERROR, desc: 'Error: $error',onPressed: (){
-
       });
     }).timeout(Duration(seconds: 5),onTimeout: (){
-      hideLoading(context);
       showMessage(context, dialogType: DialogType.WARNING, desc: 'Data Saved Local',onPressed: (){
 
       });
