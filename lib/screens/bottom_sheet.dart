@@ -176,7 +176,7 @@ class _TaskBottomSheetState extends State<TaskBottomSheet> {
     DateTime? dateTime = await showDatePicker(
         context: context,
         initialDate: selectedDate,
-        firstDate: DateTime.now(),
+        firstDate: DateTime.now().subtract(Duration(days: 365)),
         lastDate: DateTime.now().add(Duration(days: 365))
     );
     if(dateTime != null){

@@ -39,11 +39,7 @@ class _TaskWidgetState extends State<TaskWidget> {
                     bottomLeft: Radius.circular(10),
                     bottomRight: Radius.circular(10),
                     topRight: Radius.circular(10)),
-                onPressed: (context) {
-                  if (mounted) {
-                    deleteTask(widget.task);
-                  }
-                },
+                onPressed: (context) {},
                 backgroundColor: Color(0xFFFE4A49),
                 foregroundColor: Colors.white,
                 icon: Icons.delete,
