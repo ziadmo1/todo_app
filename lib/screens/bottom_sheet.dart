@@ -85,7 +85,7 @@ class _TaskBottomSheetState extends State<TaskBottomSheet> {
                     if(text!.isEmpty){
                       return 'Description must not be empty';
                     }
-                    if(text.startsWith(' ')){
+                   else if(text.startsWith(' ')){
                       return 'Description must not be empty';
                     }
                     return null;
@@ -100,7 +100,7 @@ class _TaskBottomSheetState extends State<TaskBottomSheet> {
                           BorderSide(color: Theme.of(context).primaryColor),
                     ),
                   ),
-                  minLines: 2,
+                  minLines: 4,
                   maxLines: 4,
                   keyboardType: TextInputType.text,
                 ),

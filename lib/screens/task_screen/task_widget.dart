@@ -39,7 +39,9 @@ class _TaskWidgetState extends State<TaskWidget> {
                     bottomLeft: Radius.circular(10),
                     bottomRight: Radius.circular(10),
                     topRight: Radius.circular(10)),
-                onPressed: (context) {},
+                onPressed: (context) {
+                  MyDataBase.deleteTask(widget.task);
+                },
                 backgroundColor: Color(0xFFFE4A49),
                 foregroundColor: Colors.white,
                 icon: Icons.delete,
