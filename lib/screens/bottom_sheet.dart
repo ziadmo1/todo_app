@@ -17,8 +17,8 @@ class TaskBottomSheet extends StatefulWidget {
   State<TaskBottomSheet> createState() => _TaskBottomSheetState();
 }
 var formKey = GlobalKey<FormState>();
-var taskController = TextEditingController();
-var descController = TextEditingController();
+TextEditingController taskController = TextEditingController();
+TextEditingController descController = TextEditingController();
 class _TaskBottomSheetState extends State<TaskBottomSheet> {
   @override
   Widget build(BuildContext context) {
@@ -157,6 +157,8 @@ class _TaskBottomSheetState extends State<TaskBottomSheet> {
         hideLoading(context);
         showMessage(context,dialogType: DialogType.SUCCES,desc: 'Task Added Successfully',onPressed: (){
             Navigator.pop(context);
+            taskController.clear();
+            descController.clear();
         });
       }
       ).catchError((onError){
@@ -167,6 +169,8 @@ class _TaskBottomSheetState extends State<TaskBottomSheet> {
         hideLoading(context);
         showMessage(context, dialogType: DialogType.WARNING, desc: 'Data Saved Local',onPressed: (){
           Navigator.pop(context);
+          taskController.clear();
+          descController.clear();
         });
       });}
   }
