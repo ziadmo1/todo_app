@@ -207,7 +207,7 @@ class _EditTaskScreenState extends State<EditTaskScreen> {
       DateTime? dateTime = await showDatePicker(
           context: context,
           initialDate: tasks.dateTime!,
-          firstDate: DateTime.now().subtract(Duration(days: 365)),
+          firstDate: DateTime.now().subtract(Duration(days: 3655)),
           lastDate: DateTime.now().add(Duration(days: 365))
       );
       if(dateTime != null){
