@@ -15,7 +15,8 @@ import '../edit_task_screen/edit_task_screen.dart';
 
 class TaskWidget extends StatefulWidget {
   Tasks task;
-  TaskWidget(this.task);
+  GlobalKey scaffoldKey;
+  TaskWidget(this.task,this.scaffoldKey);
 
   @override
   State<TaskWidget> createState() => _TaskWidgetState();
@@ -40,7 +41,7 @@ class _TaskWidgetState extends State<TaskWidget> {
                     bottomRight: Radius.circular(10),
                     topRight: Radius.circular(10)),
                 onPressed: (context) {
-                  MyDataBase.deleteTask(widget.task);
+          deleteTask(widget.task,widget.scaffoldKey.currentContext!);
                 },
                 backgroundColor: Color(0xFFFE4A49),
                 foregroundColor: Colors.white,
@@ -139,10 +140,10 @@ class _TaskWidgetState extends State<TaskWidget> {
     );
   }
 
-  deleteTask(Tasks tasks,){
+  deleteTask(Tasks tasks, BuildContext context,){
     MyDataBase.deleteTask(tasks).then((value) {
-        showMessage(context, dialogType: DialogType.SUCCES, desc: 'Task Deleted Successfully',onPressed: (){
-        });
+      showMessage(context, dialogType: DialogType.SUCCES, desc: 'Task deleted successfully',onPressed: (){
+      });
     }).catchError((error){
       showMessage(context, dialogType: DialogType.ERROR, desc: 'Error: $error',onPressed: (){
       });

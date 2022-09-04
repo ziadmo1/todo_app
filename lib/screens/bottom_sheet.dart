@@ -51,59 +51,60 @@ class _TaskBottomSheetState extends State<TaskBottomSheet> {
                 SizedBox(
                   height: 20,
                 ),
-                TextFormField(
-                  style: Theme.of(context).textTheme.displaySmall,
-                  controller: taskController,
-                  validator: (text){
-                    if(text!.isEmpty){
-                      return 'Task Title must not be empty';
-                    }
-                    if(text.startsWith(' ')){
-                      return 'Task Title must not be empty';
-                    }
-                    return null;
-                  },
-                  decoration: InputDecoration(
-                    labelText: 'Task Title',
-                    labelStyle: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                        fontSize: 22
-                    ),
-                    focusedBorder: UnderlineInputBorder(
-                      borderSide:
-                          BorderSide(color: Theme.of(context).primaryColor),
-                    ),
+          TextFormField(
+                style: Theme.of(context).textTheme.displaySmall,
+                controller: taskController,
+                validator: (text){
+                  if(text!.isEmpty){
+                    return 'Task Title must not be empty';
+                  }
+                  if(text.startsWith(' ')){
+                    return 'Task Title must not be empty';
+                  }
+                  return null;
+                },
+                decoration: InputDecoration(
+                  labelText: 'Task Title',
+                  labelStyle: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                      fontSize: 22
                   ),
-                  keyboardType: TextInputType.text,
+                  focusedBorder: UnderlineInputBorder(
+                    borderSide:
+                        BorderSide(color: Theme.of(context).primaryColor),
+                  ),
                 ),
+                keyboardType: TextInputType.text,
+              ),
                 SizedBox(
                   height: 15,
                 ),
-                TextFormField(
-                  style: Theme.of(context).textTheme.displaySmall,
-                  controller: descController,
-                  validator: (text){
-                    if(text!.isEmpty){
-                      return 'Description must not be empty';
-                    }
-                   else if(text.startsWith(' ')){
-                      return 'Description must not be empty';
-                    }
-                    return null;
-                  },
-                  decoration: InputDecoration(
-                    labelText: 'Description',
-                    labelStyle: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                      fontSize: 22
-                    ),
-                    focusedBorder: UnderlineInputBorder(
-                      borderSide:
-                          BorderSide(color: Theme.of(context).primaryColor),
-                    ),
+
+          TextFormField(
+                style: Theme.of(context).textTheme.displaySmall,
+                controller: descController,
+                validator: (text){
+                  if(text!.isEmpty){
+                    return 'Description must not be empty';
+                  }
+                 else if(text.startsWith(' ')){
+                    return 'Description must not be empty';
+                  }
+                  return null;
+                },
+                decoration: InputDecoration(
+                  labelText: 'Description',
+                  labelStyle: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                    fontSize: 22
                   ),
-                  minLines: 4,
-                  maxLines: 4,
-                  keyboardType: TextInputType.text,
+                  focusedBorder: UnderlineInputBorder(
+                    borderSide:
+                        BorderSide(color: Theme.of(context).primaryColor),
+                  ),
                 ),
+                minLines: 4,
+                maxLines: 4,
+                keyboardType: TextInputType.text,
+              ),
                 SizedBox(
                   height: 15,
                 ),

@@ -23,11 +23,12 @@ class TaskTab extends StatefulWidget {
 class _TaskTabState extends State<TaskTab> {
   DateTime selectedDate = DateTime.now();
   bool isDone = false;
-
+  var scaffoldKey = GlobalKey<ScaffoldState>();
   @override
   Widget build(BuildContext context) {
     AppConfigTheme provider = Provider.of(context);
     return Scaffold(
+      key:scaffoldKey,
       appBar: AppBar(
         title: Container(
             margin: EdgeInsets.only(left: 10),
@@ -79,7 +80,7 @@ class _TaskTabState extends State<TaskTab> {
                     return ListView.separated(
                         physics: BouncingScrollPhysics(),
                         itemBuilder: (context, index) {
-                          return TaskWidget(data![index]);
+                          return TaskWidget(data![index],scaffoldKey);
                         },
                         separatorBuilder: (context, index) => SizedBox(
                               height: 10,
